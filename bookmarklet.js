@@ -25,9 +25,13 @@ javascript: (function() {
     console.log(hrefs.join("\n"));
 
     /* Write the HREF values to the page. */
-    var text = document.createTextNode(hrefs.join("\n"));
-    var pre = document.createElement("pre");
-    pre.appendChild(text);
-    document.body.appendChild(pre);
+    var textarea = document.createElement("textarea");
+    textarea.style["border"] = "2px solid #000";
+    textarea.style["font-family"] = "monospace";
+    textarea.style["padding"] = "1em";
+    textarea.style["width"] = "100%";
+    textarea.rows = hrefs.length;
+    textarea.innerHTML = hrefs.join("\n");
+    document.body.appendChild(textarea);
 
 }());
